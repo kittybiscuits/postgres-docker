@@ -1,0 +1,28 @@
+version: '2'
+
+services:
+  db:
+    build:
+      context: ./init
+      dockerfile: Dockerfile
+    expose:
+      - 5432
+    ports:
+      - "5440:5432"
+    volumes:
+      - "${HOME}/docker-data/postgres:/var/lib/postgresql/data"
+
+    hostname: db
+    domainname: example.com
+
+#    environment:
+#      - POSTGRES_USER=admin_username
+#      - POSTGRES_PASSWORD=admin_password
+#      - POSTGRES_DB=dbname
+#      - POSTGRES_INITDB_ARGS="--data-checksums"
+
+    restart: unless-stopped
+    privileged: false
+    stdin_open: false
+    tty: false
+
