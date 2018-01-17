@@ -2,7 +2,7 @@
 
 A quick and simple local Postgres server for development or testing.
 
-Postgres version: 9.6
+Postgres version: 10.1
 
 ## Notes
 
